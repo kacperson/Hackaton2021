@@ -7,7 +7,7 @@ from saveScreenshot import *
 pictureNumber =0
 imgName="ss"
 
-imgsimilarity=0.90
+imgsimilarity=0.1
 
 print("hit enter on left up[ corner")
 input()
@@ -28,8 +28,10 @@ while True:
     oldimg=newimg
     newimg = ImageGrab.grab(lu + rd)
 
-    compareImages(oldimg,newimg)
-    saveScreenshot(newimg)
-    print("ass")
+    print(compareImages(oldimg, newimg))
+    if compareImages(oldimg, newimg)>imgsimilarity:
+        saveScreenshot(newimg)
+        print("saved")
+        #nowa notatka
 
 
