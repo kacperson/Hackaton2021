@@ -27,6 +27,7 @@ while True:
 
     oldimg=newimg
     newimg = ImageGrab.grab(lu + rd)
+
     compareImages(oldimg,newimg)
     saveScreenshot(newimg)
     print("ass")
