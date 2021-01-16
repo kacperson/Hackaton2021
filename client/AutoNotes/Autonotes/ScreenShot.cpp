@@ -13,10 +13,22 @@ void GetScreenShot(void)
     int x1, y1, x2, y2, w, h;
 
     // get screen dimensions
-    x1 = GetSystemMetrics(SM_XVIRTUALSCREEN);
-    y1 = GetSystemMetrics(SM_YVIRTUALSCREEN);
-    x2 = GetSystemMetrics(SM_CXVIRTUALSCREEN);
-    y2 = GetSystemMetrics(SM_CYVIRTUALSCREEN);
+    std::cout << "Point to Left Top corner of the window, then type Y and Enter";
+    getchar();
+    getchar();
+    POINT LeftTop;
+    GetCursorPos(&LeftTop);
+    //ScreenToClient(hwnd, &LeftTop);
+    std::cout << "Point to Right Bottom corner of the window, then type Y and Enter";
+    getchar();
+    getchar();
+    POINT RightBottom;
+    GetCursorPos(&RightBottom);
+    //ScreenToClient(hwnd, &RightBottom);
+    x1 = LeftTop.x;
+    y1 = LeftTop.y;
+    x2 = RightBottom.x;
+    y2 = RightBottom.y;
     w = x2 - x1;
     h = y2 - y1;
 
