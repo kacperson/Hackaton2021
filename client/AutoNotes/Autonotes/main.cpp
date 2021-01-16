@@ -4,6 +4,7 @@
 int main()
 {
     int x1, y1, x2, y2, w, h, seconds, slides_counter;
+    HBITMAP oldbMap, newbMap;
     // get screen dimensions
     std::cout << "Point to Left Top corner of the window, then type Y and Enter";
     getchar();
@@ -27,8 +28,15 @@ int main()
     char stop = ' ';
     std::cout << "Press ESC to stop the program";
     while (/*stop != char(27)*/true) {
-        GetScreenShot(x1, y1, w, h);
+        
+        oldbMap = GetScreenShot(x1, y1, w, h);
         Sleep(seconds * 1000);
+        newbMap = GetScreenShot(x1, y1, w, h);
+        std::cout << "dupa1";
+        std::cout << compareImages(oldbMap, newbMap)<<std::endl;
+        std::cout << "dupa2";
+        DeleteObject(oldbMap);
+        DeleteObject(newbMap);
     }
     return 0;
 }

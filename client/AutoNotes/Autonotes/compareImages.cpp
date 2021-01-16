@@ -44,8 +44,9 @@ float compareImages(HBITMAP img1, HBITMAP img2)
     if (buf1.size() != buf2.size())
         std::cout << "kekw jesteœmy w piŸdzie";
     unsigned long samePixelNumber=0;
-    for (int i = 0; i < buf1.size(); i++)
+    for (int i = 0; i < buf1.size() > buf2.size() ? buf2.size() : buf1.size(); i++)
     {
+
         if (buf1[i] == buf2[i]) {
             samePixelNumber++;
         }
