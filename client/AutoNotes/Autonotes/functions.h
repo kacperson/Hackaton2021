@@ -1,1 +1,1 @@
-void GetScreenShot(void);
+void GetScreenShot(int x1, int y1, int w, int h);
