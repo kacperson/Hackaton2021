@@ -6,3 +6,6 @@
 - Screenshot presentation
 - both convert to text
 
+### You need to install:
+- pyautogui
+- pytesseract
