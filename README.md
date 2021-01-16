@@ -7,5 +7,7 @@
 - both convert to text
 
 ### You need to install:
-- pyautogui
-- pytesseract
+  1. run setup.sh
+  2. download <https://github.com/UB-Mannheim/tesseract/wiki> and you have to add path to ImgToText.py:
+    ```pytesseract.pytesseract.tesseract_cmd = r'<YourPath>\Tesseract-OCR\tesseract.exe' ```
+  3. run AutoNotes
