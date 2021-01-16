@@ -1,7 +1,7 @@
-#Lecture to notes
+# Lecture to notes
 
-##Will convert your lecture in real time to notes
+## Will convert your lecture in real time to notes
 
-###Recording lecturer
+### Recording lecturer
 
-###Screenshot to text
+### Screenshot to text
