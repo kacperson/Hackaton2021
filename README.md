@@ -5,6 +5,7 @@
 - Record lecturer
 - Screenshot presentation
 - both convert to text
+### It's very useful during lectures, conferences, meetings
 
 ### You need to install:
   1. run setup.sh
