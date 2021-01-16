@@ -17,7 +17,6 @@ input()
 rd=pyautogui.position()
 print(lu+rd)
 
-pyautogui.sleep(3)
 
 newimg = ImageGrab.grab(lu+rd)
 oldimg = ImageGrab.grab(lu+rd)
@@ -25,8 +24,10 @@ oldimg = ImageGrab.grab(lu+rd)
 while True:
     pyautogui.sleep(3)
 
+
     oldimg=newimg
     newimg = ImageGrab.grab(lu + rd)
+    compareImages(oldimg,newimg)
     saveScreenshot(newimg)
     print("ass")
 
