@@ -1,7 +1,7 @@
-# Lecture to notes
+# AutoNotes
 
 ## Will convert your lecture in real time to notes
-
-### Recording lecturer
-
-### Screenshot to text
+### The app has to do several functions:
+- Record lecturer
+- Screenshot presentation
+- both convert to text
