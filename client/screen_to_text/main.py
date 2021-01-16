@@ -1,8 +1,11 @@
 import PIL
 from CompareImages import *
 import pyautogui
+from PIL import Image
 from PIL import ImageGrab
-
+from saveScreenshot import *
+pictureNumber =0
+imgName="ss"
 
 imgsimilarity=0.90
 
@@ -18,12 +21,13 @@ pyautogui.sleep(3)
 
 newimg = ImageGrab.grab(lu+rd)
 oldimg = ImageGrab.grab(lu+rd)
+
 while True:
     pyautogui.sleep(3)
 
     oldimg=newimg
     newimg = ImageGrab.grab(lu + rd)
-    if(compareImages()>imgsimilarity)
-        pass
+    saveScreenshot(newimg)
+    print("ass")
 
 
