@@ -36,12 +36,13 @@ while True:
     newimg = ImageGrab.grab(lu + rd)
     print(compareImages(oldimg, newimg))
     if compareImages(oldimg, newimg)>imgsimilarity:
-        newslaid=True;
+        newslaid=True
         picture_with_screen = saveScreenshot(newimg)
         nr_note = nr_note + 1
         print("saved")
         text_file = codecs.open("Output" + str(nr_note) + ".txt", "w", "UTF-8")
-        text_file.write(ocr_core(picture_with_screen))
+        slide = ocr_core(picture_with_screen)
+        text_file.write(slide)
         text_file.close()
         #nowa notatka
 
