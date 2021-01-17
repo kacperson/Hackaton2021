@@ -13,5 +13,5 @@
     ```pytesseract.pytesseract.tesseract_cmd = r'<YourPath>\Tesseract-OCR\tesseract.exe' ```
   3. run AutoNotes
 ### Or you can:
-  1. go to ./client/dist
+  1. extract main.rar
   2. run main.exe
