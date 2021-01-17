@@ -44,5 +44,7 @@ class voiceRecordThred(threading.Thread):
                     self.f = open(self.filename + str(self.filenum) + ".txt", "a")
                     self.filenum += 1;
                     break
+            print(voiceRecordThred.endflag)
             if voiceRecordThred.endflag == True:  # keyboard.is_pressed('q'):
                 self.f.close()
+                break
