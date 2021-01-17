@@ -6,6 +6,6 @@ imgName="ss"
 
 def saveScreenshot(img):
     global __pictureNumber
-    img.save(imgName + str(__pictureNumber) + ".png", "png")
     __pictureNumber = __pictureNumber+1
-    
+    img.save(imgName + str(__pictureNumber) + ".png", "png")
+    return imgName + str(__pictureNumber) + ".png"

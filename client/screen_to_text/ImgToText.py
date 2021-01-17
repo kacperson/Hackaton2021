@@ -7,7 +7,8 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 def ocr_core(filename):
-
-    text = pytesseract.image_to_string(Image.open(filename))
-    
+    dic = pytesseract.image_to_string(Image.open("./" + filename))
+    text = ""
+    for i in dic:
+        text = text + i
     return text
