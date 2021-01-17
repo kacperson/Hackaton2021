@@ -5,7 +5,8 @@ import threading
 
 global newslaid
 newslaid=False
-global endflag = False
+global endflag
+endflag= False
 
 
 # Recognizer_instance.recognize_google(audio_data, key = None, language = "pl-PL", show_all = False)
