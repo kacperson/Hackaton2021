@@ -14,16 +14,19 @@ imgName="ss"
 nr_note = 0
 
 global endflag
-imgsimilarity=0.03
+imgsimilarity=0.01
 
 print("hit enter on left upper corner")
 input()
 lu=pyautogui.position()
+
 print("hit enter on right bottom corner")
 input()
 rd=pyautogui.position()
+
 print(lu+rd)
 print("press q to exit program")
+
 newimg = ImageGrab.grab(lu+rd)
 oldimg = ImageGrab.grab(lu+rd)
 picture_with_screen = saveScreenshot(newimg)
@@ -42,9 +45,11 @@ while True:
         print("exiting program")
         voiceRecordThred.endflag = True
         break
+
     oldimg=newimg
     newimg = ImageGrab.grab(lu + rd)
     print(compareImages(oldimg, newimg))
+
     if compareImages(oldimg, newimg)>imgsimilarity:
         print("saving screenshot")
         picture_with_screen = saveScreenshot(newimg)
@@ -52,10 +57,10 @@ while True:
         voiceRecordThred.currentnumber = nr_note
         text_file = codecs.open("Output" + str(nr_note) + ".txt", "w", "UTF-8")
         slide = ocr_core(picture_with_screen)
-        print(type(slide))
         text_file.write(slide)
         text_file.close()
         #nowa notatka
+
     if(keyboard.is_pressed('q')):
         print("exiting program")
         voiceRecordThred.endflag=True
