@@ -21,7 +21,6 @@ class voiceRecordThred(threading.Thread):
         # var = 1
 
         self.f = open(self.filename + str(self.filenum) + ".txt", "a")
-        self.f.write("dupa dupa")
         # r.recognize_google(sr.Microphone(), key = None, language = "pl-PL", show_all = False)
 
     def run(self):
@@ -38,7 +37,6 @@ class voiceRecordThred(threading.Thread):
                     except:
                         print("Sorry could not recognize what you said")
                 if voiceRecordThred.newslaid == True or voiceRecordThred.endflag == True:  # keyboard.is_pressed('p') or keyboard.is_pressed('q'):
-                    print("XD")
                     newslaid = False
                     self.f.close()
                     self.f = open(self.filename + str(self.filenum) + ".txt", "a")

@@ -28,7 +28,6 @@ newimg = ImageGrab.grab(lu+rd)
 oldimg = ImageGrab.grab(lu+rd)
 picture_with_screen = saveScreenshot(newimg)
 nr_note = nr_note + 1
-print("saved")
 text_file = codecs.open("Output" + str(nr_note) + ".txt", "w", "UTF-8")
 slide = ocr_core(picture_with_screen)
 text_file.write(slide)
@@ -49,7 +48,6 @@ while True:
         voiceRecordThred.newslaid=True;
         picture_with_screen = saveScreenshot(newimg)
         nr_note = nr_note + 1
-        print("saved")
         text_file = codecs.open("Output" + str(nr_note) + ".txt", "w", "UTF-8")
         slide = ocr_core(picture_with_screen)
         print(type(slide))
