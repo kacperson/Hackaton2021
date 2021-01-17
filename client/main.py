@@ -23,6 +23,7 @@ print("hit enter on right bottom corner")
 input()
 rd=pyautogui.position()
 print(lu+rd)
+print("press q to exit program")
 newimg = ImageGrab.grab(lu+rd)
 oldimg = ImageGrab.grab(lu+rd)
 picture_with_screen = saveScreenshot(newimg)
@@ -45,6 +46,7 @@ while True:
     newimg = ImageGrab.grab(lu + rd)
     print(compareImages(oldimg, newimg))
     if compareImages(oldimg, newimg)>imgsimilarity:
+        print("saving screenshot")
         picture_with_screen = saveScreenshot(newimg)
         nr_note = nr_note + 1
         voiceRecordThred.currentnumber = nr_note
