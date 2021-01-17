@@ -5,6 +5,7 @@ import threading
 
 global newslaid
 newslaid=False
+global endflag = False
 
 
 # Recognizer_instance.recognize_google(audio_data, key = None, language = "pl-PL", show_all = False)
@@ -13,10 +14,12 @@ class voiceRecordThred(threading.Thread):
         threading.Thread.__init__(self)
         self.threadID = threadID
         self.name = name
+        self.filenum=1
+        self.filename="notatki"
         self.counter = counter
         self.r = sr.Recognizer()
         # var = 1
-        self.f = open("mytext.txt", "a")
+        self.f = open(self.filename+str(self.filenum)+".txt", "a")
         # r.recognize_google(sr.Microphone(), key = None, language = "pl-PL", show_all = False)
 
     def run(self):
@@ -36,11 +39,12 @@ class voiceRecordThred(threading.Thread):
                         #    break#po co 2 razy ?
                     except:
                         print("Sorry could not recognize what you said")
-                if newslaid == True:  # keyboard.is_pressed('p') or keyboard.is_pressed('q'):
+                if newslaid == True||endflag==True:  # keyboard.is_pressed('p') or keyboard.is_pressed('q'):
                     newslaid = False
-                    print("koniec slajdu!!!")
+                    self.f.close()
+                    self.f = open(self.filename + str(self.filenum) + ".txt", "a")
+                    filenum+=1;
                     break
 
-            if var == 1:  # keyboard.is_pressed('q'):
+            if endflag==True:  # keyboard.is_pressed('q'):
                 break
-        self.f.close()
