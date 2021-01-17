@@ -10,17 +10,18 @@ import threading
 class voiceRecordThred(threading.Thread):
     endflag=False
     newslaid=False
+    currentnumber=0;
     def __init__(self, threadID, name, counter):
+        self.notatki=voiceRecordThred.currentnumber;
         threading.Thread.__init__(self)
         self.threadID = threadID
         self.name = name
-        self.filenum = 1
         self.filename = "notatki"
         self.counter = counter
         self.r = sr.Recognizer()
         # var = 1
 
-        self.f = open(self.filename + str(self.filenum) + ".txt", "a")
+        self.f = open(self.filename + str(voiceRecordThred.currentnumber) + ".txt", "a")
         # r.recognize_google(sr.Microphone(), key = None, language = "pl-PL", show_all = False)
 
     def run(self):
@@ -36,11 +37,11 @@ class voiceRecordThred(threading.Thread):
                         self.f.write(text)
                     except:
                         print("Sorry could not recognize what you said")
-                if voiceRecordThred.newslaid == True or voiceRecordThred.endflag == True:  # keyboard.is_pressed('p') or keyboard.is_pressed('q'):
-                    newslaid = False
+                if voiceRecordThred.currentnumber!=self.notatki or voiceRecordThred.endflag == True:  # keyboard.is_pressed('p') or keyboard.is_pressed('q'):
+                    print("zmiana")
+                    self.notatki=voiceRecordThred.currentnumber
                     self.f.close()
-                    self.f = open(self.filename + str(self.filenum) + ".txt", "a")
-                    self.filenum += 1;
+                    self.f = open(self.filename + str(voiceRecordThred.currentnumber) + ".txt", "a")
                     break
             print(voiceRecordThred.endflag)
             if voiceRecordThred.endflag == True:  # keyboard.is_pressed('q'):

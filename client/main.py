@@ -14,7 +14,6 @@ imgName="ss"
 nr_note = 0
 
 global endflag
-global newslaid
 imgsimilarity=0.03
 
 print("hit enter on left upper corner")
@@ -28,6 +27,7 @@ newimg = ImageGrab.grab(lu+rd)
 oldimg = ImageGrab.grab(lu+rd)
 picture_with_screen = saveScreenshot(newimg)
 nr_note = nr_note + 1
+voiceRecordThred.currentnumber=nr_note
 text_file = codecs.open("Output" + str(nr_note) + ".txt", "w", "UTF-8")
 slide = ocr_core(picture_with_screen)
 text_file.write(slide)
@@ -45,9 +45,9 @@ while True:
     newimg = ImageGrab.grab(lu + rd)
     print(compareImages(oldimg, newimg))
     if compareImages(oldimg, newimg)>imgsimilarity:
-        voiceRecordThred.newslaid=True;
         picture_with_screen = saveScreenshot(newimg)
         nr_note = nr_note + 1
+        voiceRecordThred.currentnumber = nr_note
         text_file = codecs.open("Output" + str(nr_note) + ".txt", "w", "UTF-8")
         slide = ocr_core(picture_with_screen)
         print(type(slide))
