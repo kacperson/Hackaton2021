@@ -1,18 +1,0 @@
-Ul) Twierdzenie o prébkowaniu
-AGH
-
-* Jezeli sygnat o ograniczonej szerokosci
-pasma jest probkowany w regularnych
-odstepach z czestotliwoscia probkowania
-nie mniejsza niz podwojna wartos¢
-najwyzszej sktadowej czestotliwosci
-sygnatu, to probki takie zawieraja cata
-informacje przenoszona przez sygnat.
-Oryginalna posta¢ sygnatu moze zosta¢
-odtworzona przy uzyciu filtru
-dolnoprzepustowego
-
- 
-
- 
-
