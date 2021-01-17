@@ -1,4 +1,4 @@
-from screen_to_text.CompareImages import *
+from  screen_to_text.CompareImages import *
 import PIL
 import pyautogui
 import codecs
@@ -10,6 +10,8 @@ from screen_to_text.ImgToText import *
 
 pictureNumber =0
 imgName="ss"
+nr_note = 0
+
 
 imgsimilarity=0.03
 
@@ -31,10 +33,11 @@ while True:
     newimg = ImageGrab.grab(lu + rd)
     print(compareImages(oldimg, newimg))
     if compareImages(oldimg, newimg)>imgsimilarity:
-        dir = saveScreenshot(newimg)
+        picture_with_screen = saveScreenshot(newimg)
+        nr_note = nr_note + 1
         print("saved")
-        text_file = codecs.open("Output" + str(pictureNumber) + ".txt", "w", "UTF-8")
-        text_file.write(ocr_core(dir))
+        text_file = codecs.open("Output" + str(nr_note) + ".txt", "w", "UTF-8")
+        text_file.write(ocr_core(picture_with_screen))
         text_file.close()
         #nowa notatka
 
