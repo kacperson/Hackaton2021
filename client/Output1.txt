@@ -1,0 +1,30 @@
+UN) stodutacja gam
+
+16-QAM
+0000 0100
+
+0001 010
+
+AGH (Quadrature Amplitude Modulation)
+
+1100 1000
+
+1101 1001
+
+ 
+
+0011 0111
+
+0010 0110
+
+ 
+
+ 
+
+I
+1111 1011
+
+1110 1010
+
+ 
+
