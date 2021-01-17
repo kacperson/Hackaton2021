@@ -12,3 +12,6 @@
   2. download <https://github.com/UB-Mannheim/tesseract/wiki> and you have to add path to ./client/screen_to_text/ImgToText.py file:
     ```pytesseract.pytesseract.tesseract_cmd = r'<YourPath>\Tesseract-OCR\tesseract.exe' ```
   3. run AutoNotes
+### Or you can:
+  1. go to ./client/dist
+  2. run main.exe
