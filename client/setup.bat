@@ -1,9 +1,8 @@
 pip install pipwin
 pip install pyautogui
 pip install pytesseract
-pip install speech_recognition
 pip install keyboard
-pip install PIL
+pip install PILLOW
 pip install SpeechRecognition
-pipwin inslall pyAudio
 pip install threaded
+pipwin inslall pyAudio
