@@ -40,7 +40,7 @@ class voiceRecordThred(threading.Thread):
                         #    break#po co 2 razy ?
                     except:
                         print("Sorry could not recognize what you said")
-                if newslaid == True||endflag==True:  # keyboard.is_pressed('p') or keyboard.is_pressed('q'):
+                if newslaid == True or endflag==True:  # keyboard.is_pressed('p') or keyboard.is_pressed('q'):
                     newslaid = False
                     self.f.close()
                     self.f = open(self.filename + str(self.filenum) + ".txt", "a")
