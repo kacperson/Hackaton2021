@@ -3,6 +3,7 @@ import PIL
 import pyautogui
 import codecs
 import sys
+from voice_recorder.project2 import *
 from PIL import Image
 from PIL import ImageGrab
 from screen_to_text.saveScreenshot import *
@@ -25,6 +26,8 @@ print(lu+rd)
 
 newimg = ImageGrab.grab(lu+rd)
 oldimg = ImageGrab.grab(lu+rd)
+thread1 = voiceRecordThred(1, "t1", 1)
+thread1.start()
 
 while True:
     pyautogui.sleep(1)
@@ -33,6 +36,7 @@ while True:
     newimg = ImageGrab.grab(lu + rd)
     print(compareImages(oldimg, newimg))
     if compareImages(oldimg, newimg)>imgsimilarity:
+        newslaid=True;
         picture_with_screen = saveScreenshot(newimg)
         nr_note = nr_note + 1
         print("saved")
