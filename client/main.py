@@ -26,6 +26,13 @@ rd=pyautogui.position()
 print(lu+rd)
 newimg = ImageGrab.grab(lu+rd)
 oldimg = ImageGrab.grab(lu+rd)
+picture_with_screen = saveScreenshot(newimg)
+nr_note = nr_note + 1
+print("saved")
+text_file = codecs.open("Output" + str(nr_note) + ".txt", "w", "UTF-8")
+slide = ocr_core(picture_with_screen)
+text_file.write(slide)
+text_file.close()
 thread1 = voiceRecordThred(1, "t1", 1)
 thread1.start()
 
@@ -45,6 +52,7 @@ while True:
         print("saved")
         text_file = codecs.open("Output" + str(nr_note) + ".txt", "w", "UTF-8")
         slide = ocr_core(picture_with_screen)
+        print(type(slide))
         text_file.write(slide)
         text_file.close()
         #nowa notatka
