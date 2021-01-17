@@ -13,7 +13,8 @@ pictureNumber =0
 imgName="ss"
 nr_note = 0
 
-
+global endflag
+global newslaid
 imgsimilarity=0.03
 
 print("hit enter on left upper corner")
@@ -23,7 +24,6 @@ print("hit enter on right bottom corner")
 input()
 rd=pyautogui.position()
 print(lu+rd)
-
 newimg = ImageGrab.grab(lu+rd)
 oldimg = ImageGrab.grab(lu+rd)
 picture_with_screen = saveScreenshot(newimg)
@@ -38,12 +38,15 @@ thread1.start()
 
 while True:
     pyautogui.sleep(1)
-
+    if (keyboard.is_pressed('q')):
+        print("exiting program")
+        voiceRecordThred.endflag = True
+        break
     oldimg=newimg
     newimg = ImageGrab.grab(lu + rd)
     print(compareImages(oldimg, newimg))
     if compareImages(oldimg, newimg)>imgsimilarity:
-        newslaid=True
+        voiceRecordThred.newslaid=True;
         picture_with_screen = saveScreenshot(newimg)
         nr_note = nr_note + 1
         print("saved")
@@ -53,5 +56,7 @@ while True:
         text_file.write(slide)
         text_file.close()
         #nowa notatka
-
-
+    if(keyboard.is_pressed('q')):
+        print("exiting program")
+        voiceRecordThred.endflag=True
+        break
