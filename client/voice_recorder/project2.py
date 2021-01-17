@@ -28,22 +28,22 @@ class voiceRecordThred(threading.Thread):
         while True:
             while True:
                 with sr.Microphone() as source:
-                    print("Speak Anything :")
+                    #print("Speak Anything :")
                     audio = self.r.listen(source, timeout=3000)
                     try:
                         text = self.r.recognize_google(audio, language="pl-PL")
-                        print("You said : {}".format(text))
+                        #print("You said : {}".format(text))
                         self.f.write("\n")
                         self.f.write(text)
                     except:
-                        print("Sorry could not recognize what you said")
+                        print("")
                 if voiceRecordThred.currentnumber!=self.notatki or voiceRecordThred.endflag == True:  # keyboard.is_pressed('p') or keyboard.is_pressed('q'):
-                    print("zmiana")
+                    #print("zmiana")
                     self.notatki=voiceRecordThred.currentnumber
                     self.f.close()
                     self.f = open(self.filename + str(voiceRecordThred.currentnumber) + ".txt", "a")
                     break
-            print(voiceRecordThred.endflag)
+            #print(voiceRecordThred.endflag)
             if voiceRecordThred.endflag == True:  # keyboard.is_pressed('q'):
                 self.f.close()
                 break
